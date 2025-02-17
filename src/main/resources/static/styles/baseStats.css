@@ -1,0 +1,42 @@
+.base-stats {
+    margin-bottom: 20px;
+}
+.base-stats h3 {
+    margin-bottom: 10px;
+    color: #222222;
+}
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.stat-bar {
+    display: grid;
+    grid-template-columns: 120px 1fr 40px;
+    align-items: center;
+    gap: 10px;
+}
+.stat-bar span:first-child {
+    text-align: right;
+    color: #444;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.stat-bar span:last-child {
+    text-align: right;
+    color: #444;
+}
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.progress {
+    height: 100%;
+    background-color: #9b87f5;
+    transition: width 0.3s;
+}

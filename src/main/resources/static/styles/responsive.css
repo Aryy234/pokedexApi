@@ -1,0 +1,29 @@
+@media (max-width: 1024px) {
+    .pokedex-container {
+        flex-direction: column;
+    }
+
+    .pokemon-grid {
+        max-height: 400px;
+    }
+}
+@media (max-width: 768px) {
+    .evolution-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .evolution-arrow {
+        transform: rotate(90deg);
+    }
+}
+@media (max-width: 480px) {
+    .main-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-group {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,75 @@
+.right-panel {
+    flex: 1;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.filters {
+    margin-bottom: 20px;
+}
+.load-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #9b87f5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background-color 0.3s;
+}
+.load-button img {
+    width: 20px;
+    height: 20px;
+}
+.load-button:hover {
+    background-color: #8673e0;
+}
+.filter-group {
+    display: flex;
+    gap: 10px;
+}
+.filter-group select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+}
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+.pokemon-card {
+    background-color: #E5DEFF;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.pokemon-card:hover {
+    transform: translateY(-5px);
+}
+.pokemon-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+.pokemon-card .number {
+    color: #8E9196;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.pokemon-card .name {
+    color: #222222;
+    font-weight: bold;
+    margin-bottom: 5px;
+}

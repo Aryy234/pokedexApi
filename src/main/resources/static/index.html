@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+<div class="pokedex-container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="nameSearch" placeholder="Escribe el nombre del pokémon">
+                <button id="searchNameBtn">Buscar</button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="numberSearch" placeholder="Escribe el número del pokémon">
+                <button id="searchNumberBtn">Buscar</button>
+            </div>
+        </div>
+
+        <div class="pokemon-details">
+            <h2 id="pokemonTitle">Pikachu Nro 0025</h2>
+            <p id="pokemonDescription" class="description">Cuando se enfada, este Pokémon descarga la energía que almacena en el interior de las bolsas de sus mejillas.</p>
+
+            <div class="main-info">
+                <img id="pokemonImage" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pokemon">
+                <div class="stats">
+                    <div class="stat-row">
+                        <span>Altura</span>
+                        <span id="height">0.4m</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Peso</span>
+                        <span id="weight">0.7kg</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Categoría</span>
+                        <span id="category">Ratón</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Habilidades</span>
+                        <span id="abilities">Electricidad Estática</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Tipo</span>
+                        <div id="types" class="types">
+                            <span class="type electric">Eléctrico</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="base-stats">
+                <h3>Puntos Base</h3>
+                <div class="stats-container">
+                    <div class="stat-bar">
+                        <span>PS</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 84%"></div>
+                        </div>
+                        <span>84</span>
+                    </div>
+                    <div class="stat-bar">
+                        <span>Ataque</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 84%"></div>
+                        </div>
+                        <span>84</span>
+                    </div>
+                    <div class="stat-bar">
+                        <span>Defensa</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 84%"></div>
+                        </div>
+                        <span>84</span>
+                    </div>
+                    <div class="stat-bar">
+                        <span>Ataque Especial</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 84%"></div>
+                        </div>
+                        <span>84</span>
+                    </div>
+                    <div class="stat-bar">
+                        <span>Defensa Especial</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 84%"></div>
+                        </div>
+                        <span>84</span>
+                    </div>
+                    <div class="stat-bar">
+                        <span>Velocidad</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 84%"></div>
+                        </div>
+                        <span>84</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="evolution-chain">
+                <h3>Evoluciones</h3>
+                <div class="evolution-row">
+                    <!-- Evolution chain will be populated dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+        <div class="filters">
+            <button id="loadData" class="load-button">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Pokeball">
+                Cargar Data
+            </button>
+            <div class="filter-group">
+                <select id="typeFilter">
+                    <option value="">Tipo</option>
+                </select>
+                <select id="abilityFilter">
+                    <option value="">Habilidad</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="pokemon-grid" id="pokemonGrid">
+            <!-- Pokemon cards will be added here dynamically -->
+        </div>
+    </div>
+</div>
+<script type="module" src="script.js"></script>
+</body>
+</html>
