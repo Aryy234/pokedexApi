@@ -1,29 +1,102 @@
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .pokedex-container {
         flex-direction: column;
     }
-
-    .pokemon-grid {
-        max-height: 400px;
+    .left-panel, .right-panel {
+        width: 100%;
     }
 }
+
 @media (max-width: 768px) {
-    .evolution-row {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .evolution-arrow {
-        transform: rotate(90deg);
-    }
-}
-@media (max-width: 480px) {
     .main-info {
         flex-direction: column;
         align-items: center;
     }
-
+    .stats {
+        width: 100%;
+    }
     .filter-group {
         flex-direction: column;
+    }
+    
+    /* Ajuste para la apariencia de la Pokédex en móvil */
+    .left-panel::before {
+        width: 40px;
+        height: 40px;
+        top: 10px;
+        left: 10px;
+    }
+    
+    .right-panel::before {
+        display: none;
+    }
+    
+    .pokemon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        padding: 10px;
+    }
+    
+    .pokemon-card img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    #pokemonTitle {
+        font-size: 16px;
+    }
+    
+    .stat-bar span:first-child {
+        min-width: 80px;
+        font-size: 12px;
+    }
+    
+    .evolution-item {
+        min-width: 90px;
+    }
+    
+    .evolution-item img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .left-panel, .right-panel {
+        padding: 15px;
+        border-radius: 10px;
+    }
+    
+    .search-section {
+        margin-top: 40px;
+    }
+    
+    .search-box {
+        flex-direction: column;
+    }
+    
+    .pokemon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        max-height: 400px;
+    }
+    
+    .pokemon-card {
+        padding: 10px;
+    }
+    
+    .pokemon-card .name {
+        font-size: 8px;
+    }
+    
+    .type {
+        font-size: 8px;
+        padding: 3px 6px;
+    }
+    
+    .base-stats h3, .evolution-chain h3 {
+        font-size: 12px;
     }
 }

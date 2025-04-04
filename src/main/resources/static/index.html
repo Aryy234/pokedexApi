@@ -3,13 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokédex</title>
+    <title>Pokédex Retro</title>
     <link rel="stylesheet" href="styles/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png">
+    
+    <!-- Script de diagnóstico para solucionar problemas de conexión con PokeAPI -->
+    <script>
+        // Verificar conexión a PokeAPI al cargar
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('Verificando conexión a PokeAPI...');
+            
+            // Función para verificar conexión
+            function checkApiConnection() {
+                fetch('https://pokeapi.co/api/v2/pokemon/1')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Error HTTP: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('PokeAPI conectada correctamente, respuesta de API recibida:', data.name);
+                    })
+                    .catch(error => {
+                        console.error('ERROR DE CONEXIÓN con PokeAPI:', error);
+                        
+                        // Mostrar un indicador visual de error solo si no hay conexión
+                        const diagnosticDiv = document.createElement('div');
+                        diagnosticDiv.id = 'connection-error';
+                        diagnosticDiv.style.position = 'fixed';
+                        diagnosticDiv.style.bottom = '10px';
+                        diagnosticDiv.style.right = '10px';
+                        diagnosticDiv.style.background = '#ff0000';
+                        diagnosticDiv.style.color = 'white';
+                        diagnosticDiv.style.padding = '5px 10px';
+                        diagnosticDiv.style.borderRadius = '5px';
+                        diagnosticDiv.style.fontSize = '12px';
+                        diagnosticDiv.style.zIndex = '9999';
+                        diagnosticDiv.textContent = 'Error de conexión con PokeAPI';
+                        
+                        document.body.appendChild(diagnosticDiv);
+                    });
+            }
+            
+            // Ejecutar verificación
+            checkApiConnection();
+        });
+    </script>
 </head>
 <body>
 <div class="pokedex-container">
     <!-- Left Panel -->
     <div class="left-panel">
+        <!-- Decoraciones de Pokédex -->
+        <div class="pokedex-lights">
+            <div class="light light-red"></div>
+            <div class="light light-yellow"></div>
+            <div class="light light-green"></div>
+        </div>
+        
         <div class="search-section">
             <div class="search-box">
                 <input type="text" id="nameSearch" placeholder="Escribe el nombre del pokémon">
@@ -78,14 +131,14 @@
                         <span>84</span>
                     </div>
                     <div class="stat-bar">
-                        <span>Ataque Especial</span>
+                        <span>At. Esp.</span>
                         <div class="progress-bar">
                             <div class="progress" style="width: 84%"></div>
                         </div>
                         <span>84</span>
                     </div>
                     <div class="stat-bar">
-                        <span>Defensa Especial</span>
+                        <span>Def. Esp.</span>
                         <div class="progress-bar">
                             <div class="progress" style="width: 84%"></div>
                         </div>
@@ -107,6 +160,14 @@
                     <!-- Evolution chain will be populated dynamically -->
                 </div>
             </div>
+        </div>
+        
+        <!-- Botones de control decorativos -->
+        <div class="control-buttons">
+            <div class="control-button red"></div>
+            <div class="control-button blue"></div>
+            <div class="control-button yellow"></div>
+            <div class="control-button green"></div>
         </div>
     </div>
 
